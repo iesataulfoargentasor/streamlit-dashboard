@@ -54,6 +54,11 @@ with col2:
     st.pyplot(fig)
 
 # Distribución geográfica de clientes
+latitudes = np.random.uniform(-10, 50, 10)
+longitudes = np.random.uniform(-80, 20, 10)
+df_clientes = pd.DataFrame({"Latitud": latitudes, "Longitud": longitudes})
+
+# Mapa de Clientes
 st.subheader("🌍 Distribución Geográfica de Clientes")
 m = folium.Map(location=[20, -40], zoom_start=2)
 for _, row in df_clientes.iterrows():
